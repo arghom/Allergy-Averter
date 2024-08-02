@@ -12,6 +12,7 @@ const SessionProvider = ({ children }) => {
                 setSession(null)
             } else if(session) { 
                 setSession(session)
+                console.log(session)
             }
         });
 
