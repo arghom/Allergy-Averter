@@ -9,6 +9,7 @@ import Home from "./Home.jsx";
 import Recipes from "./Recipes.jsx";
 import LoginView from "./LoginView.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
+import DisplayRecipe from './DisplayRecipe.jsx'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path:'login',
         element: <LoginView/>,
+      },
+      {
+        path:'displayRecipe',
+        element: <DisplayRecipe/>
       },
 
     ]

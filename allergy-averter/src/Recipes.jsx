@@ -22,8 +22,8 @@ function Recipes() {
 
   return (
     <>
-    <div className='mt-16'>
-    <div>Recipes</div>
+    <div className='flex justify-center items-center flex-col'>
+    <div className=''>Recipes</div>
     <div>
         <table>
             <tbody>
@@ -31,6 +31,7 @@ function Recipes() {
                 <th>Recipe Name</th>
                 <th>Ingredients</th>
                 <th>Free From</th>
+                <th>Link To</th>
             </tr>
             </tbody>
         </table>
