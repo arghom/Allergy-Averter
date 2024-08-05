@@ -1,14 +1,23 @@
 import { useContext, useState } from "react";
 import { SessionContext } from "./SessionProvider";
+import { Link } from "react-router-dom";
 import supabase from "./utils/supabase";
 import LoginPopup from './LoginPopup'
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     // establish context to update the session to logout if 
     // it is null
     const session = useContext(SessionContext)
     const [showLoginPopup,setShowLoginPopup] = useState(null)
-  
+    const navigate = useNavigate()
+
+    const navigateToRecipes = () => {
+        navigate('/recipes')
+    }
+    const navigateHome = () => {
+        navigate('/')
+    }
 
     const toggleLoginPopup = () => {
       setShowLoginPopup(!showLoginPopup)
@@ -25,13 +34,13 @@ const Navbar = () => {
           <div className="container mx-auto p-4">
             <ul className="flex items-center justify-between">
                 <li>
-                    <h1 className='text-xl font-sans'>Allergy Averter</h1>
+                    <button className='text-xl font-sans' onClick={navigateHome}>Allergy Averter</button>
                 </li>
                 <li className=" flex items-center ">
               {session ? (
-                // If session is valid, show the authenticated message and logout button
+                // If session is valid, show the Recipes and logout button
                 <>
-                  <h1 className="font-sans mr-4">Authenticated as {session.user.email}</h1>
+                    <button className="pr-5 text-xl" onClick={navigateToRecipes}>Recipes</button>
                   <button
                     onClick={logout}
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"

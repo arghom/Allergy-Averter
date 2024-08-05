@@ -4,20 +4,19 @@ import { SessionContext } from './SessionProvider'
 import Navbar from './Navbar'
 import Home from './Home'
 import LoginView from './LoginView'
+import { Router, Outlet, Link, Navigate } from 'react-router-dom'
 
 export default function App() {
   const session = useContext(SessionContext)
-
-
-  
+  console.log(session)
 
   return (
     <>
-      <h1 className='font-sans'>hello</h1>
+    <h1 className='font-sans'>hello</h1>
 
     <Navbar/>
-    <div>
-    {session ? <Home/> : <LoginView/>}
+    <div className='mt-16'>
+    <Outlet/> 
     </div>
     </>
   )

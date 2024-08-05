@@ -11,6 +11,7 @@ const SessionProvider = ({ children }) => {
             if(event === 'SIGNED_OUT') { 
                 setSession(null)
             } else if(session) { 
+                console.log("session successful")
                 setSession(session)
                 console.log(session)
             }
